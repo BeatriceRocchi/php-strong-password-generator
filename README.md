@@ -24,3 +24,4 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 2. Creare una funzione passwordGenerator che riceve l'input inserito dall'utente (input_length) e genera la password.
 3. Nella funzione: a) inizializzare un array vuoto che conterrà la password, b) con un ciclo for (da da 0 a input_length) estrarre casualmente il tipo di carattere e poi, a seconda di quanto estratto, il carattere specifico da pushare all'interno dell'array. Per lettere maiuscole e minuscole usare chr(64 + rand(1, 26)), per numeri mt_rand(0, 9) e per simboli estrarre con mt_rand l'indice nell'array contenente la lista di simboli e c) ritornare l'array trasformato in stringa.
 4. Spostare la funzione in un file separato _functions.php_.
+5. Creare una pagina _output.php_ in cui mostrare la password e in cui richiamare la funzione (spostandola da _index.php_).

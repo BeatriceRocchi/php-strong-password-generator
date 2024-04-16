@@ -1,16 +1,16 @@
-<!-- PHP -->
 <?php
+// Inclusione della funzione di generazione password e dei dati
+require_once __DIR__ . '/data/functions.php';
 
-$output_message = 'Nessun parametro valido inserito';
+session_start();
 
-if (isset($_GET['inputLength'])) {
-  session_start();
-  $_SESSION['input_length'] = $_GET['inputLength'];
-  header('Location: ./output.php');
+if (empty($_SESSION['input_length'])) {
+  header('Location: ./index.php');
+} else {
+  $input_length = intval($_SESSION['input_length']);
+  $output_message = passwordGenerator($input_length, $charactersType, $symbolsList);
 }
-
 ?>
-<!-- /PHP -->
 
 <!-- HTML -->
 <!DOCTYPE html>
@@ -35,16 +35,7 @@ if (isset($_GET['inputLength'])) {
 
   <div class="container">
     <div class="output_box my-3"><?php echo $output_message ?></div>
-
-    <div class="form_box">
-      <form action="index.php" method="GET">
-        <div class="mb-3 d-flex align-items-center">
-          <label for="inputLength" class="me-5">Lunghezza password:</label>
-          <input type="number" class="form-control" id="inputLength" name="inputLength">
-        </div>
-        <button type="submit" class="btn btn-primary">Invia</button>
-      </form>
-    </div>
+    <button type="submit" class="btn btn-light"><a href="logout.php">Annulla</a></button>
   </div>
 </body>
 

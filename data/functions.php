@@ -1,4 +1,13 @@
 <?php
+// Dati
+$charactersType = [
+  'letters', 'capitalLetters', 'numbers', 'symbols'
+];
+
+$symbolsList = [
+  '!', '?', '&', '%', '$', '<', '>', '^', '+', '-', '*', '/', '(', ')', '[', ']', '{', '}', '@', '#', '_', '='
+];
+
 // Funzione di generazione password
 function passwordGenerator($input_length, $charactersType, $symbolsList)
 {
