@@ -2,13 +2,17 @@
 // Inclusione della funzione di generazione password e dei dati
 require_once __DIR__ . '/data/functions.php';
 
+
+
 session_start();
 
 if (empty($_SESSION['input_length'])) {
   header('Location: ./index.php');
 } else {
   $input_length = intval($_SESSION['input_length']);
-  $output_message = passwordGenerator($input_length, $charactersType, $symbolsList);
+  $characters_type = $_SESSION['characters_type'];
+  var_dump($_SESSION['characters_type']);
+  $output_message = passwordGenerator($input_length, $characters_type, $symbolsList);
 }
 ?>
 

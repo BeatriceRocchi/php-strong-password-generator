@@ -3,9 +3,20 @@
 
 $output_message = 'Nessun parametro valido inserito';
 
+if (!isset($_GET['checkTypes'])) {
+  $charactersType = [
+    'letters', 'capitalLetters', 'numbers', 'symbols'
+  ];
+} else {
+  foreach ($_GET['checkTypes'] as $check) {
+    $charactersType[] = $check;
+  }
+}
+
 if (isset($_GET['inputLength'])) {
   session_start();
   $_SESSION['input_length'] = $_GET['inputLength'];
+  $_SESSION['characters_type'] = $charactersType;
   header('Location: ./output.php');
 }
 
@@ -68,25 +79,25 @@ if (isset($_GET['inputLength'])) {
           <div>Seleziona la tipologia di caratteri da includere:</div>
           <div class="d-flex flex-column">
             <div class="mx-3">
-              <input class="form-check-input" type="checkbox" value="" id="letters" name="checkType">
+              <input class="form-check-input" type="checkbox" value="letters" id="letters" name="checkTypes[]">
               <label class="form-check-label" for="letters">
                 Lettere minuscole
               </label>
             </div>
             <div class="mx-3">
-              <input class="form-check-input" type="checkbox" value="" id="capitalLetters" name="checkType">
+              <input class="form-check-input" type="checkbox" value="capitalLetters" id="capitalLetters" name="checkTypes[]">
               <label class="form-check-label" for="capitalLetters">
                 Lettere maiuscole
               </label>
             </div>
             <div class="mx-3">
-              <input class="form-check-input" type="checkbox" value="" id="numbers" name="checkType">
+              <input class="form-check-input" type="checkbox" value="numbers" id="numbers" name="checkTypes[]">
               <label class="form-check-label" for="numbers">
                 Numeri
               </label>
             </div>
             <div class="mx-3">
-              <input class="form-check-input" type="checkbox" value="" id="symbols" name="checkType">
+              <input class="form-check-input" type="checkbox" value="symbols" id="symbols" name="checkTypes[]">
               <label class="form-check-label" for="symbols">
                 Simboli
               </label>

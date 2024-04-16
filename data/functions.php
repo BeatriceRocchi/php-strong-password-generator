@@ -1,9 +1,5 @@
 <?php
 // Dati
-$charactersType = [
-  'letters', 'capitalLetters', 'numbers', 'symbols'
-];
-
 $symbolsList = [
   '!', '?', '&', '%', '$', '<', '>', '^', '+', '-', '*', '/', '(', ')', '[', ']', '{', '}', '@', '#', '_', '='
 ];
