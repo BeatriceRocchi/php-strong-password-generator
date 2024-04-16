@@ -7,8 +7,6 @@ session_start();
 if (empty($_SESSION['input_length'])) {
   header('Location: ./index.php');
 } else {
-  var_dump($_SESSION['radio_repetition']);
-
   $input_length = intval($_SESSION['input_length']);
   $characters_type = $_SESSION['characters_type'];
   $repetition = $_SESSION['radio_repetition'];
@@ -38,7 +36,7 @@ if (empty($_SESSION['input_length'])) {
   <h3 class="text-center my-3">Genera una password sicura</h3>
 
   <div class="container">
-    <div class="output_box my-3"><?php echo $output_message ?></div>
+    <div class="output_box my-3 text-center"><?php echo $output_message ?></div>
     <button type="submit" class="btn btn-light"><a href="logout.php">Annulla</a></button>
   </div>
 </body>

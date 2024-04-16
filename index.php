@@ -1,8 +1,6 @@
 <!-- PHP -->
 <?php
 
-$output_message = 'Nessun parametro valido inserito';
-
 if (!isset($_GET['checkTypes'])) {
   $charactersType = [
     'letters', 'capitalLetters', 'numbers', 'symbols'
@@ -19,6 +17,8 @@ if (isset($_GET['inputLength'])) {
   $_SESSION['characters_type'] = $charactersType;
   $_SESSION['radio_repetition'] = $_GET['radioRepetition'];
   header('Location: ./output.php');
+} else {
+  $output_message = 'Nessun parametro valido inserito';
 }
 
 ?>
@@ -46,7 +46,7 @@ if (isset($_GET['inputLength'])) {
   <h3 class="text-center my-3">Genera una password sicura</h3>
 
   <div class="container">
-    <div class="output_box my-3"><?php echo $output_message ?></div>
+    <div class="output_box my-3 text-center"><?php echo $output_message ?></div>
 
     <div class="form_box">
       <form action="index.php" method="GET">
