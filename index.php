@@ -38,10 +38,63 @@ if (isset($_GET['inputLength'])) {
 
     <div class="form_box">
       <form action="index.php" method="GET">
+        <!-- Input: password length -->
         <div class="mb-3 d-flex align-items-center">
           <label for="inputLength" class="me-5">Lunghezza password:</label>
           <input type="number" class="form-control" id="inputLength" name="inputLength">
         </div>
+        <!-- /Input -->
+
+        <!-- Radio button: allow/not allow characters repetitions -->
+        <div class="d-flex align-items-center mb-3">
+          <div>Consenti ripetizioni di uno o più caratteri:</div>
+          <div class="mx-3">
+            <input class="form-check-input" type="radio" name="radioRepetition" id="radioRepetition1" checked>
+            <label class="form-check-label" for="radioRepetition1">
+              Sì
+            </label>
+          </div>
+          <div class="mx-3">
+            <input class="form-check-input" type="radio" name="radioRepetition" id="radioRepetition2">
+            <label class="form-check-label" for="radioRepetition2">
+              No
+            </label>
+          </div>
+        </div>
+        <!-- /Radio button -->
+
+        <!-- Checkbox: select types of characters -->
+        <div class="d-flex mb-3">
+          <div>Seleziona la tipologia di caratteri da includere:</div>
+          <div class="d-flex flex-column">
+            <div class="mx-3">
+              <input class="form-check-input" type="checkbox" value="" id="letters" name="checkType">
+              <label class="form-check-label" for="letters">
+                Lettere minuscole
+              </label>
+            </div>
+            <div class="mx-3">
+              <input class="form-check-input" type="checkbox" value="" id="capitalLetters" name="checkType">
+              <label class="form-check-label" for="capitalLetters">
+                Lettere maiuscole
+              </label>
+            </div>
+            <div class="mx-3">
+              <input class="form-check-input" type="checkbox" value="" id="numbers" name="checkType">
+              <label class="form-check-label" for="numbers">
+                Numeri
+              </label>
+            </div>
+            <div class="mx-3">
+              <input class="form-check-input" type="checkbox" value="" id="symbols" name="checkType">
+              <label class="form-check-label" for="symbols">
+                Simboli
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- /Checkbox -->
+
         <button type="submit" class="btn btn-primary">Invia</button>
       </form>
     </div>
