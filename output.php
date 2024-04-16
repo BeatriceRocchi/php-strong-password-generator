@@ -11,7 +11,6 @@ if (empty($_SESSION['input_length'])) {
 } else {
   $input_length = intval($_SESSION['input_length']);
   $characters_type = $_SESSION['characters_type'];
-  var_dump($_SESSION['characters_type']);
   $output_message = passwordGenerator($input_length, $characters_type, $symbolsList);
 }
 ?>
