@@ -1,0 +1,22 @@
+body {
+  background-color: rgb(1, 25, 105);
+  color: white;
+}
+
+.output_box {
+  background-color: lightcyan;
+  border-radius: 5px;
+  padding: 15px;
+  color: black;
+}
+
+.form_box {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 15px;
+  color: black;
+}
+
+form label {
+  text-wrap: nowrap;
+}

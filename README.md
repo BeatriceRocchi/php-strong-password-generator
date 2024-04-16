@@ -19,3 +19,5 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
 
 ## Svolgimento
+
+1. Creare un form (method='GET') con un campo di input per l'inserimento del numero di caratteri richiesto per la passowrd.
