@@ -17,6 +17,7 @@ if (isset($_GET['inputLength'])) {
   session_start();
   $_SESSION['input_length'] = $_GET['inputLength'];
   $_SESSION['characters_type'] = $charactersType;
+  $_SESSION['radio_repetition'] = $_GET['radioRepetition'];
   header('Location: ./output.php');
 }
 
@@ -60,13 +61,13 @@ if (isset($_GET['inputLength'])) {
         <div class="d-flex align-items-center mb-3">
           <div>Consenti ripetizioni di uno o più caratteri:</div>
           <div class="mx-3">
-            <input class="form-check-input" type="radio" name="radioRepetition" id="radioRepetition1" checked>
+            <input class="form-check-input" type="radio" name="radioRepetition" id="radioRepetition1" value="1" checked>
             <label class="form-check-label" for="radioRepetition1">
               Sì
             </label>
           </div>
           <div class="mx-3">
-            <input class="form-check-input" type="radio" name="radioRepetition" id="radioRepetition2">
+            <input class="form-check-input" type="radio" name="radioRepetition" id="radioRepetition2" value="0">
             <label class="form-check-label" for="radioRepetition2">
               No
             </label>

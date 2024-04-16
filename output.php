@@ -2,16 +2,17 @@
 // Inclusione della funzione di generazione password e dei dati
 require_once __DIR__ . '/data/functions.php';
 
-
-
 session_start();
 
 if (empty($_SESSION['input_length'])) {
   header('Location: ./index.php');
 } else {
+  var_dump($_SESSION['radio_repetition']);
+
   $input_length = intval($_SESSION['input_length']);
   $characters_type = $_SESSION['characters_type'];
-  $output_message = passwordGenerator($input_length, $characters_type, $symbolsList);
+  $repetition = $_SESSION['radio_repetition'];
+  $output_message = passwordGenerator($input_length, $characters_type, $symbolsList, $repetition);
 }
 ?>
 

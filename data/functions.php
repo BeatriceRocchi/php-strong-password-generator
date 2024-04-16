@@ -5,23 +5,30 @@ $symbolsList = [
 ];
 
 // Funzione di generazione password
-function passwordGenerator($input_length, $charactersType, $symbolsList)
+function passwordGenerator($input_length, $characters_type, $symbolsList, $repetition)
 {
   $password = [];
-  for ($i = 0; $i < $input_length; $i++) {
-    $indexType = mt_rand(0, count($charactersType) - 1);
 
-    if ($charactersType[$indexType] === 'letters') {
+  while (count($password) < $input_length) {
+    $indexType = mt_rand(0, count($characters_type) - 1);
+
+    if ($characters_type[$indexType] === 'letters') {
       $character = strtolower(chr(64 + rand(1, 26)));
-    } elseif ($charactersType[$indexType] === 'capitalLetters') {
+    } elseif ($characters_type[$indexType] === 'capitalLetters') {
       $character = chr(64 + rand(1, 26));
-    } elseif ($charactersType[$indexType] === 'numbers') {
+    } elseif ($characters_type[$indexType] === 'numbers') {
       $character = mt_rand(0, 9);
-    } elseif ($charactersType[$indexType] === 'symbols') {
+    } elseif ($characters_type[$indexType] === 'symbols') {
       $character = $symbolsList[mt_rand(0, count($symbolsList) - 1)];
     }
 
-    $password[] = $character;
+    if ($repetition === '1') {
+      $password[] = $character;
+    } elseif ($repetition === '0') {
+      if (!in_array($character, $password)) {
+        $password[] = $character;
+      }
+    }
   }
   return implode('', $password);
 }
